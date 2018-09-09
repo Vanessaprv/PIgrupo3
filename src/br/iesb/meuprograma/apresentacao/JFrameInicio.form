@@ -24,39 +24,34 @@
                 <Property name="text" type="java.lang.String" value="Plano de Ensino"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Professor"/>
-              </Properties>
-            </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jMenu5"/>
+                <Property name="text" type="java.lang.String" value="Professor"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem25">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jMenuItem25"/>
+                    <Property name="text" type="java.lang.String" value="Dados Pessoais"/>
                   </Properties>
                 </MenuItem>
                 <Menu class="javax.swing.JMenu" name="jMenu6">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jMenu6"/>
+                    <Property name="text" type="java.lang.String" value="Atua&#xe7;&#xe3;o IES"/>
                   </Properties>
                   <SubComponents>
                     <MenuItem class="javax.swing.JMenuItem" name="jMenuItem26">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="jMenuItem26"/>
+                        <Property name="text" type="java.lang.String" value="Geral"/>
                       </Properties>
                     </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="jMenuItem27">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="jMenuItem27"/>
+                        <Property name="text" type="java.lang.String" value="Atua&#xe7;&#xe3;o profissional"/>
                       </Properties>
                     </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="jMenuItem28">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="jMenuItem28"/>
+                        <Property name="text" type="java.lang.String" value="Publica&#xe7;&#xf5;es"/>
                       </Properties>
                     </MenuItem>
                   </SubComponents>

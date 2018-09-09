@@ -46,7 +46,6 @@ public class JFrameInicio extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem25 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -251,23 +250,20 @@ public class JFrameInicio extends javax.swing.JFrame {
         jMenuItem3.setText("Plano de Ensino");
         jMenu1.add(jMenuItem3);
 
-        jMenuItem4.setText("Professor");
-        jMenu1.add(jMenuItem4);
+        jMenu5.setText("Professor");
 
-        jMenu5.setText("jMenu5");
-
-        jMenuItem25.setText("jMenuItem25");
+        jMenuItem25.setText("Dados Pessoais");
         jMenu5.add(jMenuItem25);
 
-        jMenu6.setText("jMenu6");
+        jMenu6.setText("Atuação IES");
 
-        jMenuItem26.setText("jMenuItem26");
+        jMenuItem26.setText("Geral");
         jMenu6.add(jMenuItem26);
 
-        jMenuItem27.setText("jMenuItem27");
+        jMenuItem27.setText("Atuação profissional");
         jMenu6.add(jMenuItem27);
 
-        jMenuItem28.setText("jMenuItem28");
+        jMenuItem28.setText("Publicações");
         jMenu6.add(jMenuItem28);
 
         jMenu5.add(jMenu6);
@@ -448,7 +444,6 @@ public class JFrameInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem28;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
