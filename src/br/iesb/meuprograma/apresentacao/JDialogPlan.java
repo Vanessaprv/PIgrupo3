@@ -5,6 +5,11 @@
  */
 package br.iesb.meuprograma.apresentacao;
 
+import br.iesb.meuprograma.entidades.PlanoEnsino;
+import br.iesb.meuprograma.negocio.NegocioException;
+import br.iesb.meuprograma.negocio.PlanoBO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Casa
@@ -36,11 +41,11 @@ public class JDialogPlan extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTCurso = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        jTBibliografia = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTAno = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTextField8 = new javax.swing.JTextField();
@@ -48,15 +53,15 @@ public class JDialogPlan extends javax.swing.JDialog {
         jTextField9 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTEmenta = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTCompetencias = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        jTMetodologia = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTSemestre = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -66,7 +71,7 @@ public class JDialogPlan extends javax.swing.JDialog {
         jLabel16 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jTAvaliacao = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -89,16 +94,16 @@ public class JDialogPlan extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(298, 298, 298)
+                .addGap(343, 343, 343)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jScrollPane8.setBackground(new java.awt.Color(255, 255, 255));
@@ -113,18 +118,20 @@ public class JDialogPlan extends javax.swing.JDialog {
 
         jLabel5.setText("Curso:");
 
-        jTextField1.setText("Nome do Curso");
-
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jTextArea5.setText("Incluir a bibliografia básica complementar.");
-        jScrollPane6.setViewportView(jTextArea5);
+        jTBibliografia.setColumns(20);
+        jTBibliografia.setRows(5);
+        jScrollPane6.setViewportView(jTBibliografia);
 
         jLabel6.setText("Ano:");
 
         jLabel11.setText("Professor(a):");
 
         jButton3.setText("Incluir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jTextField8.setText("Matrícula");
 
@@ -135,27 +142,24 @@ public class JDialogPlan extends javax.swing.JDialog {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("EMENTA");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Descrever a ementa do curso.");
-        jTextArea2.setToolTipText("");
-        jScrollPane2.setViewportView(jTextArea2);
+        jTEmenta.setColumns(20);
+        jTEmenta.setRows(5);
+        jTEmenta.setToolTipText("");
+        jScrollPane2.setViewportView(jTEmenta);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("COMPETÊNCIAS E HABILIDADES");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Descrever as competências e habilidades a serem adquiridas com o curso.");
-        jScrollPane1.setViewportView(jTextArea1);
+        jTCompetencias.setColumns(20);
+        jTCompetencias.setRows(5);
+        jScrollPane1.setViewportView(jTCompetencias);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("METODOLOGIA DE ENSINO");
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Descrever as téscnicas e recursos da metodologia.");
-        jScrollPane3.setViewportView(jTextArea3);
+        jTMetodologia.setColumns(20);
+        jTMetodologia.setRows(5);
+        jScrollPane3.setViewportView(jTMetodologia);
 
         jLabel7.setText("Semestre:");
 
@@ -185,18 +189,11 @@ public class JDialogPlan extends javax.swing.JDialog {
 
         jTextField5.setText("Nome da Disciplina");
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Critérios de avaliação.");
-        jScrollPane5.setViewportView(jTextArea4);
+        jTAvaliacao.setColumns(20);
+        jTAvaliacao.setRows(5);
+        jScrollPane5.setViewportView(jTAvaliacao);
 
         jLabel9.setText("Carga Horária Semestral:");
-
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("BIBILIOGRAFIA");
@@ -250,15 +247,15 @@ public class JDialogPlan extends javax.swing.JDialog {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(39, 39, 39)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTAno, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(42, 42, 42)
                                         .addComponent(jLabel7)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addGap(18, 18, 18)
@@ -305,11 +302,11 @@ public class JDialogPlan extends javax.swing.JDialog {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
@@ -371,16 +368,34 @@ public class JDialogPlan extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE))
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 985, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        PlanoEnsino plano = new PlanoEnsino();
+        plano.setCurso(jTCurso.getText());
+        plano.setAno(jTAno.getText());
+        plano.setSemestre(jTSemestre.getText());
+        plano.setEmenta(jTEmenta.getText());
+        plano.setCompetencias(jTCompetencias.getText());
+        plano.setMetodologia(jTMetodologia.getText());
+        plano.setAvaliacao(jTAvaliacao.getText());
+        plano.setBibliografia(jTBibliografia.getText());
+        
+        PlanoBO bo = new PlanoBO();
+      try {
+          bo.inserir(plano);
+          JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
+          dispose();
+      } catch (NegocioException e) {
+             JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,15 +470,15 @@ public class JDialogPlan extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTextField jTAno;
+    private javax.swing.JTextArea jTAvaliacao;
+    private javax.swing.JTextArea jTBibliografia;
+    private javax.swing.JTextArea jTCompetencias;
+    private javax.swing.JTextField jTCurso;
+    private javax.swing.JTextArea jTEmenta;
+    private javax.swing.JTextArea jTMetodologia;
+    private javax.swing.JTextField jTSemestre;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
